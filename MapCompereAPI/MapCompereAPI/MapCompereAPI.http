@@ -1,0 +1,6 @@
+@MapCompereAPI_HostAddress = http://localhost:5237
+
+GET {{MapCompereAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
