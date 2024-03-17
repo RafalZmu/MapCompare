@@ -6,7 +6,7 @@ namespace MapCompereAPI.Controllers
 	[Route("[controller]")]
 	public class MapController : ControllerBase
 	{
-		private string _mapFilePath = "./Assets/world - Copy.svg";
+		private readonly string _mapFilePath = "./Assets/WorldMap.svg";
 
 		[HttpGet]
 		public IActionResult GetMap()

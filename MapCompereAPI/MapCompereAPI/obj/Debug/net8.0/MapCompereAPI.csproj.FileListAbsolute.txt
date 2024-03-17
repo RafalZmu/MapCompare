@@ -30,3 +30,17 @@ D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\obj\Debug\net8.0\refint\
 D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\obj\Debug\net8.0\MapCompereAPI.pdb
 D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\obj\Debug\net8.0\MapCompereAPI.genruntimeconfig.cache
 D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\obj\Debug\net8.0\ref\MapCompereAPI.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\AWSSDK.Core.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\DnsClient.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\MongoDB.Bson.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\MongoDB.Driver.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\SharpCompress.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\Snappier.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\ZstdSharp.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll
+D:\Programowanie\MapCompere\MapCompereAPI\MapCompereAPI\obj\Debug\net8.0\MapCompereAPI.sourcelink.json
