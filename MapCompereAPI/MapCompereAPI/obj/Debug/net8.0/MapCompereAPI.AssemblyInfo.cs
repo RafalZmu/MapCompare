@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MapCompereAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6ea03289f124ef6347a4983389d9429243743a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("MapCompereAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MapCompereAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1198,19 +1198,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Igor\\.nuget\\packages\\": {}
+    "C:\\Users\\rafal\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programowanie\\MapCompere\\MapCompereAPI\\MapCompereAPI\\MapCompereAPI.csproj",
+      "projectUniqueName": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\MapCompereAPI.csproj",
       "projectName": "MapCompereAPI",
-      "projectPath": "D:\\Programowanie\\MapCompere\\MapCompereAPI\\MapCompereAPI\\MapCompereAPI.csproj",
-      "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-      "outputPath": "D:\\Programowanie\\MapCompere\\MapCompereAPI\\MapCompereAPI\\obj\\",
+      "projectPath": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\MapCompereAPI.csproj",
+      "packagesPath": "C:\\Users\\rafal\\.nuget\\packages\\",
+      "outputPath": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rafal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1230,6 +1230,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1264,7 +1269,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

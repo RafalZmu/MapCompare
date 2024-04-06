@@ -7,6 +7,12 @@ namespace MapCompereAPI.Controllers
 	public class MapController : ControllerBase
 	{
 		private readonly string _mapFilePath = "./Assets/WorldMap.svg";
+		private readonly IMapService _mapService; 
+
+		public MapController(IMapService mapService)
+		{
+			_mapService = mapService;
+		}
 
 		[HttpGet]
 		public IActionResult GetMap()
@@ -27,6 +33,17 @@ namespace MapCompereAPI.Controllers
 				// File not found, return a 404 status code or handle it accordingly
 				return NotFound();
 			}
+		}
+
+		[HttpPost]
+		public IActionResult PostMap([FromBody] List<CountryDTO> countries)
+		{
+			string BaseMap = System.IO.File.ReadAllText(_mapFilePath);
+
+			string updatedMap = BaseMap;
+
+			// Loop through the list of countries and update the SVG content
+			return Ok();
 		}
 	}
 }
