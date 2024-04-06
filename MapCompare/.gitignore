@@ -15,8 +15,8 @@ dist-ssr
 coverage
 appsettings.json
 *.local
-bin
-obj
+**/bin/
+**/obj/
 
 /cypress/videos/
 /cypress/screenshots/
