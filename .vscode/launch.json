@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/MapCompereAPI/MapCompereAPI/bin/Debug/net8.0/MapCompereAPI.dll",
+            "program": "${workspaceFolder}/MapCompereAPI/bin/Debug/net8.0/MapCompereAPI.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/MapCompereAPI/MapCompereAPI",
+            "cwd": "${workspaceFolder}/MapCompereAPI",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
