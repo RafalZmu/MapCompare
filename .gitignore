@@ -31,5 +31,5 @@ appsettings.json
 *.sw?
 
 *.tsbuildinfo
-MapCompereAPI/MapCompereAPI/bin/*
-MapCompereAPI/MapCompereAPI/obj/*
+MapCompereAPI/bin/*
+MapCompereAPI/obj/*

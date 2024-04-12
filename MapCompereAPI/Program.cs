@@ -1,4 +1,6 @@
 
+using MapCompereAPI.Repositories;
+
 namespace MapCompereAPI
 {
 	public class Program
@@ -13,6 +15,8 @@ namespace MapCompereAPI
 			// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
+
+			builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
 			builder.Services.AddSingleton<IMapService, MapService>();
 
 			var app = builder.Build();
