@@ -33,3 +33,6 @@ appsettings.json
 *.tsbuildinfo
 MapCompereAPI/bin/*
 MapCompereAPI/obj/*
+
+**/bin/
+**/obj/
