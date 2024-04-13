@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, type Ref } from 'vue';
 import { ref, reactive } from 'vue';
-import { GetMap } from './services/MapService';
+import { GetBaseMap } from './services/MapService';
 import PinchScrollZoom, {
   type PinchScrollZoomEmitData,
   type PinchScrollZoomExposed
@@ -13,9 +13,8 @@ let isDragging: boolean = false;
 
 
 onMounted(async () => {
-  map.value = await GetMap();
+  map.value = await GetBaseMap();
 })
-
 
 function changePathColor(event: MouseEvent){
   if(isDragging === true){

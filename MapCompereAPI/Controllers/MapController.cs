@@ -15,24 +15,8 @@ namespace MapCompereAPI.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult GetMap()
+		public IActionResult GetBaseMap()
 		{
-			// if (System.IO.File.Exists(_mapFilePath))
-			// {
-			// 	// Read the SVG file content
-			// 	string svgContent = System.IO.File.ReadAllText(_mapFilePath);
-
-			// 	// Set the response content type
-			// 	HttpContext.Response.ContentType = "image/svg+xml";
-
-			// 	// Write the SVG content to the response output stream
-			// 	return Content(svgContent);
-			// }
-			// else
-			// {
-			// 	// File not found, return a 404 status code or handle it accordingly
-			// 	return NotFound();
-			// }
 			var map =  _mapService.GetMap();
 			if(map == null)
 			{
