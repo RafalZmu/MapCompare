@@ -8,16 +8,18 @@ namespace MapCompereAPI.Repositories
 	{
 		private static string _mongoConnectionString = Environment.GetEnvironmentVariable("MONGO_CONNECTION");
 		private static MongoClient? _client;
+		private static ILogger<DataBaseMongo> _logger;
 
-		public DataBaseMongo()
+		public DataBaseMongo(ILogger<DataBaseMongo> logger)
 		{
+			_logger = logger;
 			__init__();
 		}
         public void __init__()
         {
 			if (_mongoConnectionString == null)
 			{
-				Console.WriteLine("No connection string found in enviroment variables");
+				_logger.LogError("No connection string found in enviroment variables");
 			}
 
 			var setting = MongoClientSettings.FromConnectionString(_mongoConnectionString);
@@ -32,8 +34,8 @@ namespace MapCompereAPI.Repositories
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine("Error connecting to database");
-				Console.WriteLine(ex);
+				_logger.LogError("Error connecting to database");
+				_logger.LogError(ex.Message);
 			}
         }
 

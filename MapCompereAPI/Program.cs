@@ -1,5 +1,6 @@
 
 using MapCompereAPI.Repositories;
+using NLog.Web;
 
 namespace MapCompereAPI
 {
@@ -18,6 +19,10 @@ namespace MapCompereAPI
 
 			builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
 			builder.Services.AddSingleton<IMapService, MapService>();
+
+			// Configure NLog
+			builder.Logging.ClearProviders();
+			builder.Host.UseNLog();
 
 			var app = builder.Build();
 
