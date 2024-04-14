@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{08798083-CDBD-4E61-817B-740807AB02E0}|MapCompereAPITests\\MapCompereAPITests.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapitests\\repositories\\databasemongotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08798083-CDBD-4E61-817B-740807AB02E0}|MapCompereAPITests\\MapCompereAPITests.csproj|solutionrelative:mapcompereapitests\\repositories\\databasemongotests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\services\\mapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\services\\mapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\repositories\\databasemongo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\repositories\\databasemongo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\mapping\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\models\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\dtos\\mapdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\dtos\\mapdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\services\\imapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\services\\imapservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\controllers\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\controllers\\mapcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|e:\\moje programy\\mapcompare\\mapcompereapi\\mapcompereapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE00E03-E338-47E8-8476-D6DFCC8ED301}|MapCompereAPI\\MapCompereAPI.csproj|solutionrelative:mapcompereapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 93,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:967939564:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MapDTO.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\DTOs\\MapDTO.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\DTOs\\MapDTO.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\DTOs\\MapDTO.cs",
+              "RelativeToolTip": "MapCompereAPI\\DTOs\\MapDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:37:13.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Map.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Models\\Map.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Models\\Map.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Models\\Map.cs",
+              "RelativeToolTip": "MapCompereAPI\\Models\\Map.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:37:06.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Mapping\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Mapping\\AutoMapperProfile.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Mapping\\AutoMapperProfile.cs",
+              "RelativeToolTip": "MapCompereAPI\\Mapping\\AutoMapperProfile.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T17:32:05.073Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataBaseMongoTests.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPITests\\Repositories\\DataBaseMongoTests.cs",
+              "RelativeDocumentMoniker": "MapCompereAPITests\\Repositories\\DataBaseMongoTests.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPITests\\Repositories\\DataBaseMongoTests.cs",
+              "RelativeToolTip": "MapCompereAPITests\\Repositories\\DataBaseMongoTests.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAMwC8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T13:21:02.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DataBaseMongo.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Repositories\\DataBaseMongo.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Repositories\\DataBaseMongo.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Repositories\\DataBaseMongo.cs",
+              "RelativeToolTip": "MapCompereAPI\\Repositories\\DataBaseMongo.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwA8AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T13:19:27.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Program.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Program.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Program.cs",
+              "RelativeToolTip": "MapCompereAPI\\Program.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBIAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T12:15:35.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MapController.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Controllers\\MapController.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Controllers\\MapController.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Controllers\\MapController.cs",
+              "RelativeToolTip": "MapCompereAPI\\Controllers\\MapController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T12:12:12.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMapService.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Services\\IMapService.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Services\\IMapService.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Services\\IMapService.cs",
+              "RelativeToolTip": "MapCompereAPI\\Services\\IMapService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T12:10:46.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MapService.cs",
+              "DocumentMoniker": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Services\\MapService.cs",
+              "RelativeDocumentMoniker": "MapCompereAPI\\Services\\MapService.cs",
+              "ToolTip": "E:\\Moje Programy\\MapCompare\\MapCompereAPI\\MapCompereAPI\\Services\\MapService.cs",
+              "RelativeToolTip": "MapCompereAPI\\Services\\MapService.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAwEoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T12:05:04.983Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 79,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

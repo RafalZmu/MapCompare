@@ -15,9 +15,9 @@ namespace MapCompereAPI.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult GetBaseMap()
+		public async Task<IActionResult> GetBaseMap()
 		{
-			var map =  _mapService.GetMap();
+			var map = await _mapService.GetBaseMap();
 			if(map == null)
 			{
 				return NotFound();
@@ -26,7 +26,7 @@ namespace MapCompereAPI.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult PostMap([FromBody] List<CountryDTO> countries)
+		public async Task<IActionResult> PostMap([FromBody] List<CountryDTO> countries)
 		{
 			string BaseMap = System.IO.File.ReadAllText(_mapFilePath);
 
@@ -35,5 +35,12 @@ namespace MapCompereAPI.Controllers
 			// Loop through the list of countries and update the SVG content
 			return Ok();
 		}
+
+		[HttpDelete]
+		public async Task<IActionResult> DeleteMap(string mapName)
+		{
+            _mapService.DeleteMap(mapName);
+            return Ok();
+        }
 	}
 }
