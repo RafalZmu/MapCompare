@@ -36,3 +36,6 @@ MapCompereAPI/obj/*
 
 **/bin/
 **/obj/
+
+**/.env/
+MapCompereAPI/GPT4AllService/Models/mistral-7b-instruct-v0.1.Q4_0.gguf
