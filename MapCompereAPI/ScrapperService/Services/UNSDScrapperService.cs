@@ -1,4 +1,8 @@
-﻿using ScrapperService.Models;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using CsvHelper.Configuration.Attributes;
+using ScrapperService.Models;
+using System.Globalization;
 using System.Linq;
 
 namespace ScrapperService.Services
@@ -30,37 +34,47 @@ namespace ScrapperService.Services
 
         }
 
-        private static List<List<string>> GetDataFromFile(string example_data_path)
+        public static List<List<string>> GetDataFromFile(string example_data_path)
         {
             if (!File.Exists(example_data_path))
             {
                 Console.WriteLine("File not found.");
                 throw new ApplicationException("File not found.");
             }
+            var rows = new List<List<string>>();
+
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true,
+                Delimiter = ",",
+            };
 
             try
             {
-                using (StreamReader sr = new(example_data_path))
+                using (var reader = new StreamReader(example_data_path))
+                using (var csv = new CsvReader(reader, config))
                 {
-                    List<List<string>> data = [];
-                    while (!sr.EndOfStream) 
+                    while (csv.Read())
                     {
-                        var line = sr.ReadLine();
-                        List<string> values = line.Split(',').ToList();
-                        data.Add(values);
-
+                        var row = new List<string>();
+                        for (int i = 0; i < csv.ColumnCount; i++)
+                        {
+                            row.Add(csv.GetField(i));
+                        }
+                        rows.Add(row);
                     }
-                    return data;
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Console.WriteLine("The file could not be read:");
-                throw new ApplicationException("The file could not be read:", e);
+                Console.WriteLine($"An error occurred while reading the file: {ex.Message}");
+                throw new ApplicationException("The file could not be read.", ex);
             }
+
+            return rows;
         }
 
-        private static UNSDFullDataContent GetDataTitleAndColumnNames(List<string> firstRow, List<string> secondRow)
+        public static UNSDFullDataContent GetDataTitleAndColumnNames(List<string> firstRow, List<string> secondRow)
         {
             var rowToExtractFrom = firstRow;
             var dataContent = new UNSDFullDataContent();
