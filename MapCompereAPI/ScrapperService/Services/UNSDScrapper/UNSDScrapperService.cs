@@ -5,18 +5,22 @@ using ScrapperService.Models;
 using System.Globalization;
 using System.Linq;
 
-namespace ScrapperService.Services
+namespace ScrapperService.Services.UNSDScrapper
 {
     public class UNSDScrapperService : IScrapperService
     {
         private string _example_data_path = """C:\Users\rafal\Downloads\UNdata_Export_20240624_202226784\UNdata_Export_20240624_202226784.csv""";
 
-        private List<List<string>> _rawData;  
+        private List<List<string>> _rawData;
         private UNSDFullDataContent _dataContent;
 
         // Ensure the file exists
         public string ReadData()
         {
+            //Scrap the data from the website
+            string query = "GDP";
+            Scrapper.Scrape("https://data.un.org/Search.aspx?q="+query);
+
             //Get the data from the file
             _rawData = GetDataFromFile(_example_data_path);
 

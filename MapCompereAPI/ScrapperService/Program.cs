@@ -1,5 +1,6 @@
 
 using ScrapperService.Services;
+using ScrapperService.Services.UNSDScrapper;
 
 namespace ScrapperService
 {

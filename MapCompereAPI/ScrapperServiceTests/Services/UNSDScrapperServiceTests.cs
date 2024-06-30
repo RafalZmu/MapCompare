@@ -1,5 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ScrapperService.Services;
+﻿using Microsoft.Playwright;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ScrapperService.Services.UNSDScrapper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,20 @@ namespace ScrapperService.Services.Tests
 
             // Cleanup
             File.Delete(exampleDataPath);
+        }
+        [TestMethod]
+        public async Task ScrapeSearchResults_ValidQuery_ReturnsData()
+        {
+            // Arrange
+            string Uri = "https://data.un.org/Search.aspx?q=GDP";
+            HttpClient client = new();
+
+            // Act
+            IEnumerable<string> result = await Scrapper.GetDatasetsTitles(Uri, client);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count() > 0);
         }
     }
 }
