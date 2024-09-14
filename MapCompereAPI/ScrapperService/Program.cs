@@ -1,4 +1,5 @@
 
+using ScrapperService.Connectors;
 using ScrapperService.Services;
 using ScrapperService.Services.UNSDScrapper;
 
@@ -17,6 +18,7 @@ namespace ScrapperService
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<IScrapperService, UNSDScrapperService>();
+			builder.Services.AddSingleton<ILLMServiceConnector, LLMServiceConnector>();
 
 
             var app = builder.Build();

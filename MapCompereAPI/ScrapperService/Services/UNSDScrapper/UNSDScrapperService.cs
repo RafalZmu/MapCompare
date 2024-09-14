@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using ScrapperService.Connectors;
 using ScrapperService.Models;
 using System.Globalization;
 using System.Linq;
@@ -13,13 +14,19 @@ namespace ScrapperService.Services.UNSDScrapper
 
         private List<List<string>> _rawData;
         private UNSDFullDataContent _dataContent;
+        private ILLMServiceConnector _LLMServiceConnector;
+
+        public UNSDScrapperService(ILLMServiceConnector LLMServiceConnector)
+        {
+            _LLMServiceConnector = LLMServiceConnector;
+        }
 
         // Ensure the file exists
-        public string ReadData()
+        public async Task<string> ReadData()
         {
             //Scrap the data from the website
             string query = "GDP";
-            Scrapper.Scrape("https://data.un.org/Search.aspx?q="+query);
+            await Scrapper.Scrape("https://data.un.org/Search.aspx?q=", query, _LLMServiceConnector);
 
             //Get the data from the file
             _rawData = GetDataFromFile(_example_data_path);

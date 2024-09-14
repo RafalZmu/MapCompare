@@ -2,6 +2,6 @@
 {
     public interface IScrapperService
     {
-        string ReadData();
+        Task<string> ReadData();
     }
 }

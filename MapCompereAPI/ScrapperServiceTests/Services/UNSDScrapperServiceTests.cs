@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ScrapperService.Connectors;
 using ScrapperService.Services.UNSDScrapper;
 using System;
 using System.Collections.Generic;
@@ -63,6 +64,27 @@ namespace ScrapperService.Services.Tests
             // Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count() > 0);
+        }
+
+        [TestMethod]
+        public async Task GetPrediction()
+        {
+            //Arrange
+            string Uri = "https://data.un.org/Search.aspx?q=Temperature";
+            HttpClient client = new();
+            ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+
+            IEnumerable<string> titles = await Scrapper.GetDatasetsTitles(Uri, client);
+            string titlesString = "";
+            int index = 0;
+            foreach (string title in titles)
+            {
+                titlesString += index.ToString() + "-"+ title+"//";
+                index++;
+            }
+
+            //Act 
+            string result = await LLMServiceConnector.GetPrediction(titlesString, "Which one of provided Titles matches best to this search: Bulb Temperature. Return only the number that corresponst to the most relevant title. Don't provide any more information, return only the number, The titles are separated with //.");
         }
     }
 }
