@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.Configuration.Attributes;
+using Microsoft.Playwright;
 using ScrapperService.Connectors;
 using ScrapperService.Models;
 using System.Globalization;
@@ -20,13 +21,62 @@ namespace ScrapperService.Services.UNSDScrapper
         {
             _LLMServiceConnector = LLMServiceConnector;
         }
+        public async Task<List<string>> GetDatasetsTitles(string url, HttpClient http)
+        {
+            // Initialize Playwright
+            using var playwright = await Playwright.CreateAsync();
+            await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true });
+            var page = await browser.NewPageAsync();
+
+            await page.GotoAsync(url);
+
+            var titles = await page.QuerySelectorAllAsync(".Result h2");
+
+            List<string> Content = new();
+            foreach (var title in titles)
+            {
+                var innerTextH2 = await title.InnerTextAsync();
+                Content.Add(innerTextH2);
+            }
+
+            return Content;
+        }
+        public async Task<string> DownloadData(string url, int dataIndexToDownload)
+        {
+            using var playwright = await Playwright.CreateAsync();
+            await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = true });
+            var page = await browser.NewPageAsync();
+            await page.GotoAsync(url);
+            var linksToDownloadPages = await page.QuerySelectorAllAsync(".Result h2 a");
+
+            var linkToSelectedDownloadPage = await linksToDownloadPages[dataIndexToDownload].GetAttributeAsync("href");
+            linkToSelectedDownloadPage = "https://data.un.org/" + linkToSelectedDownloadPage;
+
+            await page.GotoAsync(linkToSelectedDownloadPage);
+            var downloadButton = await page.QuerySelectorAsync("a[title='Download this view of the data series']");
+            await downloadButton.ClickAsync();
+
+
+            await page.WaitForSelectorAsync("#downloadXmlLink");
+
+            var downloadTask = page.RunAndWaitForDownloadAsync(async () =>
+            {
+                await page.ClickAsync("#downloadXmlLink");
+            });
+
+            var download = await downloadTask;
+            var downloadPath = "D:\\Projekty\\Praca_inz\\DownloadedXML.zip";
+            await download.SaveAsAsync(downloadPath);
+
+            return await linksToDownloadPages[dataIndexToDownload].GetAttributeAsync("href")?? "Not found";
+
+
+        }
 
         // Ensure the file exists
         public async Task<string> ReadData()
         {
             //Scrap the data from the website
-            string query = "GDP";
-            await Scrapper.Scrape("https://data.un.org/Search.aspx?q=", query, _LLMServiceConnector);
 
             //Get the data from the file
             _rawData = GetDataFromFile(_example_data_path);

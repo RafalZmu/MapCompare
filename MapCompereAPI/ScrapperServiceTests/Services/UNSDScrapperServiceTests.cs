@@ -57,9 +57,10 @@ namespace ScrapperService.Services.Tests
             // Arrange
             string Uri = "https://data.un.org/Search.aspx?q=GDP";
             HttpClient client = new();
+            IScrapperService scrapper = new UNSDScrapperService(new LLMServiceConnector());
 
             // Act
-            IEnumerable<string> result = await Scrapper.GetDatasetsTitles(Uri, client);
+            IEnumerable<string> result = await scrapper.GetDatasetsTitles(Uri, client);
 
             // Assert
             Assert.IsNotNull(result);
@@ -73,8 +74,9 @@ namespace ScrapperService.Services.Tests
             string Uri = "https://data.un.org/Search.aspx?q=Temperature";
             HttpClient client = new();
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
 
-            IEnumerable<string> titles = await Scrapper.GetDatasetsTitles(Uri, client);
+            IEnumerable<string> titles = await scrapper.GetDatasetsTitles(Uri, client);
             string titlesString = "";
             int index = 0;
             foreach (string title in titles)
@@ -84,7 +86,28 @@ namespace ScrapperService.Services.Tests
             }
 
             //Act 
-            string result = await LLMServiceConnector.GetPrediction(titlesString, "Which one of provided Titles matches best to this search: Bulb Temperature. Return only the number that corresponst to the most relevant title. Don't provide any more information, return only the number, The titles are separated with //.");
+            string result = await LLMServiceConnector.GetPrediction(titlesString, "Which one of provided Titles matches best to this search: Bulb Temperature minimum. Return only the number that corresponst to the most relevant title. Don't provide any more information, return only the number without any other text, The titles are separated with //.");
+            result = result.Trim();
+            
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Length == 1);
+        }
+
+        [TestMethod]
+        public async Task DownloadingTheFile()
+        {
+            //Arrange
+            string Uri = "https://data.un.org/Search.aspx?q=Temperature";
+            ILLMServiceConnector lLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(lLMServiceConnector);
+
+            //Act
+            var result = await scrapper.DownloadData(Uri, 3);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.Equals(result, "Data.aspx?q=Temperature&d=CLINO&f=ElementCode%3a05");
         }
     }
 }
