@@ -1,19 +1,11 @@
 ﻿namespace ScrapperService.Models
 {
-    public class UNSDFullDataContent
+    public class UNSDRecord
     {
-        public string ContextTitle; // Get from the website while scrapping 
-        public List<string> ColumnNames;
-        public string RelevantRowName; 
-        public string FirstRelevantRowIndex;
-
-        public UNSDFullDataContent()
-        {
-            ContextTitle = "";
-            ColumnNames = new List<string>();
-            RelevantRowName = "";
-            FirstRelevantRowIndex = "";
-        }
+        string Country { get; set; }
+        string MostRecentYear { get; set; }
+        string DataDescription { get; set; }
+        string DataValue { get; set; }
     }
     
 }

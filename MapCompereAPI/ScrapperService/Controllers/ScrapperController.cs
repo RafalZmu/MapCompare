@@ -18,7 +18,7 @@ namespace ScrapperService.Controllers
         {
             try
             {
-                return Ok(_UNSDScrapper.ReadData());
+                return Ok();
             }
             catch (Exception)
             {
