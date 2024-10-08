@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\services\\unsdscrapper\\unsdscrapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\services\\unsdscrapper\\scrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\services\\unsdscrapper\\scrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{17009764-9934-420D-A34A-32F081D93900}|ScrapperServiceTests\\ScrapperServiceTests.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservicetests\\services\\unsdscrapperservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{17009764-9934-420D-A34A-32F081D93900}|ScrapperServiceTests\\ScrapperServiceTests.csproj|solutionrelative:scrapperservicetests\\services\\unsdscrapperservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\connectors\\llmserviceconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\connectors\\llmserviceconnector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\services\\iscrapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\services\\iscrapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\controllers\\scrappercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\models\\unsdfulldatacontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\models\\unsdfulldatacontent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\services\\iscrapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\services\\iscrapperservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\services\\unsdscrapper\\scrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|solutionrelative:scrapperservice\\services\\unsdscrapper\\scrapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8C778D68-905F-4127-90F5-F7B843E5EFC2}|ScrapperService\\ScrapperService.csproj|d:\\projekty\\praca_inz\\mapcompare\\mapcompereapi\\scrapperservice\\scrapperservice.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -42,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 93,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +58,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "LLMServiceConnector.cs",
+              "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Connectors\\LLMServiceConnector.cs",
+              "RelativeDocumentMoniker": "ScrapperService\\Connectors\\LLMServiceConnector.cs",
+              "ToolTip": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Connectors\\LLMServiceConnector.cs",
+              "RelativeToolTip": "ScrapperService\\Connectors\\LLMServiceConnector.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T08:19:18.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ScrapperController.cs",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Controllers\\ScrapperController.cs",
               "RelativeDocumentMoniker": "ScrapperService\\Controllers\\ScrapperController.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "UNSDFullDataContent.cs",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Models\\UNSDFullDataContent.cs",
               "RelativeDocumentMoniker": "ScrapperService\\Models\\UNSDFullDataContent.cs",
@@ -80,7 +97,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ScrapperService.http",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\ScrapperService.http",
               "RelativeDocumentMoniker": "ScrapperService\\ScrapperService.http",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\appsettings.json",
               "RelativeDocumentMoniker": "ScrapperService\\appsettings.json",
@@ -110,7 +127,7 @@
               "RelativeDocumentMoniker": "ScrapperService\\Services\\IScrapperService.cs",
               "ToolTip": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Services\\IScrapperService.cs",
               "RelativeToolTip": "ScrapperService\\Services\\IScrapperService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAIAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T15:55:16.034Z",
               "EditorCaption": ""
@@ -123,33 +140,33 @@
               "RelativeDocumentMoniker": "ScrapperService\\Services\\UNSDScrapper\\UNSDScrapperService.cs",
               "ToolTip": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Services\\UNSDScrapper\\UNSDScrapperService.cs",
               "RelativeToolTip": "ScrapperService\\Services\\UNSDScrapper\\UNSDScrapperService.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAAqwIQAAAAQAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAwwBMAAABLAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T15:54:52.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Scrapper.cs",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Services\\UNSDScrapper\\Scrapper.cs",
               "RelativeDocumentMoniker": "ScrapperService\\Services\\UNSDScrapper\\Scrapper.cs",
               "ToolTip": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperService\\Services\\UNSDScrapper\\Scrapper.cs",
               "RelativeToolTip": "ScrapperService\\Services\\UNSDScrapper\\Scrapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAQAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-03T15:54:44.309Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UNSDScrapperServiceTests.cs",
               "DocumentMoniker": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperServiceTests\\Services\\UNSDScrapperServiceTests.cs",
               "RelativeDocumentMoniker": "ScrapperServiceTests\\Services\\UNSDScrapperServiceTests.cs",
               "ToolTip": "D:\\Projekty\\Praca_inz\\MapCompare\\MapCompereAPI\\ScrapperServiceTests\\Services\\UNSDScrapperServiceTests.cs",
               "RelativeToolTip": "ScrapperServiceTests\\Services\\UNSDScrapperServiceTests.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAcwFEAAAAQAAAA",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAewLQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-25T12:59:36.667Z",
               "EditorCaption": ""

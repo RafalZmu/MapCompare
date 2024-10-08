@@ -32,6 +32,11 @@ namespace ScrapperService.Services.UNSDScrapper
 
             var titles = await page.QuerySelectorAllAsync(".Result h2");
 
+            if (titles == null)
+            {
+                throw new Exception("No titles found");
+            }
+
             List<string> Content = new();
             foreach (var title in titles)
             {
@@ -66,14 +71,14 @@ namespace ScrapperService.Services.UNSDScrapper
 
             var download = await downloadTask;
 
-            var downloadPath ="D:\\Projekty\\Praca_inz"; 
-            var filePath = "D:\\Projekty\\Praca_inz\\"+dataIndexToDownload+".zip";
+            var downloadPath = "D:\\Projekty\\Praca_inz";
+            var filePath = "D:\\Projekty\\Praca_inz\\" + dataIndexToDownload + ".zip";
 
             await download.SaveAsAsync(filePath);
 
             Unzip(filePath, downloadPath, dataIndexToDownload);
 
-            return await linksToDownloadPages[dataIndexToDownload].GetAttributeAsync("href")?? "Not found";
+            return "Downloaded successfully";
         }
 
         private static void Unzip(string filePath, string downloadPath, int dataIndex)
@@ -83,12 +88,12 @@ namespace ScrapperService.Services.UNSDScrapper
             {
                 // Assuming there's only one file in the zip archive
                 var entry = archive.Entries[0];
-                string destinationPath = Path.Combine(downloadPath, dataIndex+".xml");
+                string destinationPath = Path.Combine(downloadPath, dataIndex + ".xml");
                 entry.ExtractToFile(destinationPath, true);
             }
         }
 
-        public Task<Dictionary<string, object>> ProcessData(int FileIndex)
+        public List<Dictionary<string, string>> ProcessData(int FileIndex)
         {
             var xmlFilePath = "D:\\Projekty\\Praca_inz\\" + FileIndex + ".xml";
             XDocument xDocument = XDocument.Load(xmlFilePath);
@@ -102,7 +107,7 @@ namespace ScrapperService.Services.UNSDScrapper
                 foreach (var field in fields)
                 {
                     var name = field.Attribute("name").Value;
-                    var value = field.Value;    
+                    var value = field.Value;
                     record[name] = value;
                 }
                 records.Add(record);
@@ -110,37 +115,41 @@ namespace ScrapperService.Services.UNSDScrapper
             records = GetMostRecentData(records);
 
 
-            return null;
+            return records;
         }
 
         private List<Dictionary<string, string>> GetMostRecentData(List<Dictionary<string, string>> records)
         {
             string mostRecentYear = "";
-            if(records[0].ContainsKey("Year") == true)
-            {
-                mostRecentYear = records.Max(x => x["Year"]);
-                if(int.Parse(mostRecentYear) > DateTime.Now.Year)
-                {
-                    mostRecentYear = DateTime.Now.Year.ToString();
-                }
-                records = records.Where(x => x["Year"] == mostRecentYear).ToList();
-            }
-            else if(records[0].ContainsKey("Year(s)") == true)
-            {
-                mostRecentYear = records.Max(x => x["Year(s)"]);
-                records = records.Where(x => x["Year(s)"] == mostRecentYear).ToList();
-                if(int.Parse(mostRecentYear) > DateTime.Now.Year)
-                {
-                    mostRecentYear = DateTime.Now.Year.ToString();
-                }
-            }
-            else if (records[0].ContainsKey("Period") == true)
-            {
-                mostRecentYear = records.Max(x => x["Period"]);
-                mostRecentYear = mostRecentYear.Split("-")[1];
-                records = records.Where(x => x["Period"].Contains(mostRecentYear)).ToList();
-            }
+            records = GetMostRecentPeriod(records);
             return records;
+        }
+        private static List<Dictionary<string, string>> GetMostRecentPeriod(List<Dictionary<string, string>> data)
+        {
+            var mostRecentRecords = new List<Dictionary<string, string>>();
+            var countryKey = data[0].Keys.FirstOrDefault(x => x.Contains("Country"));
+            var countryGroups = data.GroupBy(d => d[countryKey]).ToList();
+            foreach (var group in countryGroups)
+            {
+                mostRecentRecords.Add(group.OrderByDescending(d => GetMostRecentYear(d)).First());
+
+            }
+            return mostRecentRecords;
+
+        }
+        public static int GetMostRecentYear(Dictionary<string, string> record)
+        {
+            if (record.ContainsKey("Year"))
+            {
+                return int.Parse(record["Year"]);
+            }
+            if (record.ContainsKey("Period"))
+            {
+                var period = record["Period"];
+                var parts = period.Split('-');
+                return int.Parse(parts.Last()); // Get the end year in a "YYYY-YYYY" format
+            }
+            return 0;
         }
     }
 }

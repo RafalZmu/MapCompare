@@ -69,7 +69,6 @@ namespace ScrapperService.Services.Tests
 
             //Assert
             Assert.IsNotNull(result);
-            Assert.Equals(result, "Data.aspx?q=Temperature&d=CLINO&f=ElementCode%3a05");
         }
 
         [TestMethod]
@@ -80,11 +79,107 @@ namespace ScrapperService.Services.Tests
             IScrapperService scrapper = new UNSDScrapperService(lLMServiceConnector);
 
             //Act
-            var result = await scrapper.ProcessData(3);
+            var result = scrapper.ProcessData(1);
 
             //Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count > 0);
+        }
+
+        [TestMethod]
+        public async Task GetPredictionBestKeys()
+        {
+            //Arrange
+            ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+
+            //Act
+            var data = scrapper.ProcessData(3);
+            var Data = data[0];
+            var keysString = "";
+            foreach (var key in Data)
+            {
+                if (key.Key == "Country or territory" || key.Key == "Year" || key.Key   == "Year(s)" || key.Key == "Period")
+                {
+                    continue;
+                }
+                keysString += "|"+key.Key+","+key.Value+"|";
+            }
+            keysString = "["+ keysString + "]";
+            var query = "Anual GDP";
+            var mostRelevantKeys = await LLMServiceConnector.GetPrediction(keysString, $"In data part you will be provided comma separeted list of keys and corresponding values to some data dictionary. The data is associated with this query={query}. You need to return only two best matching keys. Your response should exactly match the template: [Description=The key with highest possibility of containing the description of the informations in the dataset must be string, Values=The key with highest possibility of containing the numerical values of the dataset]. Ignore the keys with country or year in them. The keys and values are listed in the squere brackets");
+
+            Assert.IsNotNull( mostRelevantKeys );
+            Assert.IsTrue(mostRelevantKeys.Contains("Description"));
+            Assert.IsTrue(mostRelevantKeys.Contains("Values"));
+
+        }
+
+        [TestMethod]
+        public void GetAllDescriptions()
+        {
+            //Arrange
+            ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            var data = scrapper.ProcessData(3);
+
+            //Act
+            List<string> recordsDescriptions = Scrapper.GetAllRecordDescriptions(data, "Item");
+
+            //Assert
+            Assert.IsNotNull(recordsDescriptions);
+        }
+
+        [TestMethod]
+        public void RemoveUnwantedKeys()
+        {
+            //Arrange
+            ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            var data = scrapper.ProcessData(3);
+            var mostRelevantKeys = "Item,Value";
+
+            //Act
+            var result = Scrapper.RemoveUnwantedKeys(data, mostRelevantKeys);
+
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count > 0);
+        }
+
+        [TestMethod]
+        public async Task GetMostRelevantDescription()
+        {
+            //Arrange
+            ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
+            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            var data = scrapper.ProcessData(3);
+            List<string> recordsDescriptions = Scrapper.GetAllRecordDescriptions(data, "Item");
+            var query = "Anual GDP";
+
+            //Act
+            var mostRelevantDescription = await LLMServiceConnector.GetPrediction(string.Join(",", recordsDescriptions), $"Which one of provided descriptions matches best to this query: {query}. Return only the number that corresponst to the most relevant query");
+
+            //Assert
+            Assert.IsNotNull(mostRelevantDescription);
+
+
+        }
+
+        [TestMethod]
+        public async Task IntegrationTest()
+        {
+            //Arrange
+            Scrapper scrapper = new(new LLMServiceConnector(), new UNSDScrapperService(new LLMServiceConnector()));
+            string Uri = "https://data.un.org/Search.aspx?q=Temperature";
+            string query = "Annual average temperature";
+
+            //Act
+            var result = await scrapper.Scrape(Uri, query);
+
+            //Assert
+            Assert.IsNotNull(result);
+
         }
     }
 }

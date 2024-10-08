@@ -6,7 +6,7 @@
 
         Task<string> DownloadData(string url, int dataIndexToDownload);
 
-        Task<Dictionary<string, Object>> ProcessData(int FileIndex);
+        List<Dictionary<string, string>> ProcessData(int FileIndex);
         
     }
 }
