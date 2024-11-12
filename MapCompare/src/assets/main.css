@@ -3,6 +3,12 @@
 #app {
   margin: 0 auto;
   font-weight: normal;
+  display: grid;
+}
+
+.map {
+  height: 90vh;
+  width: 90vw;
 }
 
 @media (hover: hover) {
@@ -11,14 +17,7 @@
   }
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+body {
+  display: flex;
+  place-items: center;
 }

@@ -19,7 +19,7 @@ namespace ScrapperService.Services.Tests
             // Arrange
             string Uri = "https://data.un.org/Search.aspx?q=GDP";
             HttpClient client = new();
-            IScrapperService scrapper = new UNSDScrapperService(new LLMServiceConnector());
+            IScrapperService scrapper = new UNSDScrapperService();
 
             // Act
             IEnumerable<string> result = await scrapper.GetDatasetsTitles(Uri, client);
@@ -36,7 +36,7 @@ namespace ScrapperService.Services.Tests
             string Uri = "https://data.un.org/Search.aspx?q=Temperature";
             HttpClient client = new();
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
 
             IEnumerable<string> titles = await scrapper.GetDatasetsTitles(Uri, client);
             string titlesString = "";
@@ -62,7 +62,7 @@ namespace ScrapperService.Services.Tests
             //Arrange
             string Uri = "https://data.un.org/Search.aspx?q=Temperature";
             ILLMServiceConnector lLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(lLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
 
             //Act
             var result = await scrapper.DownloadData(Uri, 3);
@@ -76,7 +76,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             ILLMServiceConnector lLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(lLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
 
             //Act
             var result = scrapper.ProcessData(1);
@@ -91,7 +91,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
 
             //Act
             var data = scrapper.ProcessData(3);
@@ -120,7 +120,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
             var data = scrapper.ProcessData(3);
 
             //Act
@@ -135,7 +135,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
             var data = scrapper.ProcessData(3);
             var mostRelevantKeys = "Item,Value";
 
@@ -152,7 +152,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             ILLMServiceConnector LLMServiceConnector = new LLMServiceConnector();
-            IScrapperService scrapper = new UNSDScrapperService(LLMServiceConnector);
+            IScrapperService scrapper = new UNSDScrapperService();
             var data = scrapper.ProcessData(3);
             List<string> recordsDescriptions = Scrapper.GetAllRecordDescriptions(data, "Item");
             var query = "Anual GDP";
@@ -170,7 +170,7 @@ namespace ScrapperService.Services.Tests
         public async Task IntegrationTest()
         {
             //Arrange
-            Scrapper scrapper = new(new LLMServiceConnector(), new UNSDScrapperService(new LLMServiceConnector()));
+            Scrapper scrapper = new(new LLMServiceConnector(), new UNSDScrapperService());
             string Uri = "https://data.un.org/Search.aspx?q=Temperature";
             string query = "Annual average temperature";
 

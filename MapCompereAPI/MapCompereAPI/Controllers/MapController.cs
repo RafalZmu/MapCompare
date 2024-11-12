@@ -14,7 +14,7 @@ namespace MapCompereAPI.Controllers
 			_mapService = mapService;
 		}
 
-		[HttpGet]
+		[HttpGet("BaseMap")]
 		public async Task<IActionResult> GetBaseMap()
 		{
 			var map = await _mapService.GetBaseMap();

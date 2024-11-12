@@ -13,7 +13,7 @@ namespace ScrapperService.Controllers
             _UNSDScrapper = UNSDScrapper;
 
         }
-        [HttpGet]
+        [HttpGet("BaseMap")]
         public IActionResult Get()
         {
             try

@@ -1,61 +1,77 @@
 <script setup lang="ts">
 import { onMounted, type Ref } from 'vue';
 import { ref, reactive } from 'vue';
-import { GetBaseMap } from './services/MapService';
-import PinchScrollZoom, {
-  type PinchScrollZoomEmitData,
-  type PinchScrollZoomExposed
-} from '@coddicat/vue-pinch-scroll-zoom';
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
-const zoomer = ref<PinchScrollZoomExposed>();
-let map = ref('');
-let isDragging: boolean = false;
-
+let map = null;
 
 onMounted(async () => {
-  map.value = await GetBaseMap();
 })
 
-function changePathColor(event: MouseEvent){
-  if(isDragging === true){
-    return;
-  }
-
-  const target = event.target as SVGPathElement;
-
-  if(target.tagName === 'path'){
-    console.log(target.getAttribute("d"))
-    if(target.getAttribute("fill") === 'red'){
-      target.setAttribute('fill', 'green')
-    }else{
-      target.setAttribute('fill', 'red');
+// GeoJSON data (you can also load this from a file or URL)
+const geojsonData: GeoJSON.FeatureCollection = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "Country 1", "color": "#ff0000" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-10.0, 50.0],
+            [10.0, 50.0],
+            [10.0, 60.0],
+            [-10.0, 60.0],
+            [-10.0, 50.0]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Country 2", "color": "#00ff00" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [10.0, 50.0],
+            [30.0, 50.0],
+            [30.0, 60.0],
+            [10.0, 60.0],
+            [10.0, 50.0]
+          ]
+        ]
+      }
     }
+  ]
+};
+
+const mapContainer = ref(null);
+onMounted(() => {
+  if (mapContainer.value) {
+    map = L.map(mapContainer.value).setView([51.505, -0.09], 3); // Initial view: center at lat/lon with zoom level
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    L.geoJSON(geojsonData, {
+      style: (feature) => {
+        return {
+          color: feature.properties.color,
+          weight: 2,
+          opacity: 1,
+        };
+      },
+    }).addTo(map);
   }
-}
-
-function draggingStart(){
-  setTimeout(() =>{
-    isDragging = true;
-  }, 120);
-}
-function draggingStop(){
-  console.log("Not dragging");
-  setTimeout(() =>{
-    isDragging = false;
-  }, 100);
-}
-
+});
 </script>
 
 <template>
   <h1>Map Compare</h1>
   <button>Change map</button>
-  <PinchScrollZoom ref="zoomer" :min-scale="1" :max-scale="10"  :width="2200" :height="857"
-    @start-drag="draggingStart" @stop-drag="draggingStop"
-
-    style="border: 1px solid black; position: relative; width:90vw; height: 90vh;">
-    <div @click="changePathColor($event)" v-html="map"></div>
-    <h5 style="position: absolute; top: 89px; left: 535px; color: white;">1</h5>
-
-  </PinchScrollZoom>
+  <div class="map" ref="mapContainer" ></div>
 </template>

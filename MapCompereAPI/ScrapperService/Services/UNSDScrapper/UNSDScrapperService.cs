@@ -13,13 +13,8 @@ namespace ScrapperService.Services.UNSDScrapper
 {
     public class UNSDScrapperService : IScrapperService
     {
-        private string _example_data_path = """C:\Users\rafal\Downloads\UNdata_Export_20240624_202226784\UNdata_Export_20240624_202226784.csv""";
-
-        private ILLMServiceConnector _LLMServiceConnector;
-
-        public UNSDScrapperService(ILLMServiceConnector LLMServiceConnector)
+        public UNSDScrapperService()
         {
-            _LLMServiceConnector = LLMServiceConnector;
         }
         public async Task<List<string>> GetDatasetsTitles(string url, HttpClient http)
         {

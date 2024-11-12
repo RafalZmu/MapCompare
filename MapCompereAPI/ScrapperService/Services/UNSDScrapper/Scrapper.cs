@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using ScrapperService.Connectors;
+using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
 
@@ -21,7 +22,7 @@ namespace ScrapperService.Services.UNSDScrapper
             var http = new HttpClient();
             var titles = await _UNSDScrapper.GetDatasetsTitles(url, http);
 
-            //Ask GTP4All service which title aligns best with the query
+            //Ask LLM service which title aligns best with the query
             string titlesString = "";
             int index = 0;
             foreach (string title in titles)
