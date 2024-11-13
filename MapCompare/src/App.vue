@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { onMounted, type Ref } from 'vue';
 import { ref, reactive } from 'vue';
-import L from "leaflet";
+import L, { geoJSON } from "leaflet";
 import "leaflet/dist/leaflet.css";
+import * as countriesJson from "world-geojson";
+import poland from 'world-geojson/countries/poland.json';
 
 let map = null;
+
 
 onMounted(async () => {
 })
@@ -57,12 +60,15 @@ onMounted(() => {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     }).addTo(map);
 
-    L.geoJSON(geojsonData, {
+    L.geoJSON(poland, {
       style: (feature) => {
         return {
-          color: feature.properties.color,
-          weight: 2,
-          opacity: 1,
+          color: "black",
+          weight: 0,
+          opacity: 10,
+          fillColor: "red",
+          fillOpacity: 0.5,
+
         };
       },
     }).addTo(map);
