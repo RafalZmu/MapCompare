@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MapCompereAPI.Connectors;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MapCompereAPI.Controllers
 {
@@ -7,23 +8,37 @@ namespace MapCompereAPI.Controllers
 	public class MapController : ControllerBase
 	{
 		private readonly string _mapFilePath = "./Assets/WorldMap.svg";
-		private readonly IMapService _mapService; 
+		private readonly IMapService _mapService;
+		private readonly IScrapperConnector _scrapperConnector;
 
-		public MapController(IMapService mapService)
+		public MapController(IMapService mapService, IScrapperConnector scrapperConnector)
 		{
 			_mapService = mapService;
+			_scrapperConnector = scrapperConnector;
+
 		}
 
 		[HttpGet("BaseMap")]
 		public async Task<IActionResult> GetBaseMap()
 		{
 			var map = await _mapService.GetBaseMap();
-			if(map == null)
+			if (map == null)
 			{
 				return NotFound();
 			}
 			return Ok(map);
 		}
+
+		[HttpGet("GetMap")]
+		public async Task<IActionResult> GetMap([FromQuery] string keyword, [FromQuery] string description)
+		{
+			var data = await _scrapperConnector.ScrapData(keyword, description);
+
+
+			return Ok();	
+		}
+
+
 
 		[HttpPost]
 		public async Task<IActionResult> PostMap([FromBody] List<CountryDTO> countries)

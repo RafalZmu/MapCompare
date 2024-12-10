@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ScrapperService.Connectors;
 using ScrapperService.Services;
+using ScrapperService.Services.UNSDScrapper;
 
 namespace ScrapperService.Controllers
 {
@@ -7,11 +9,10 @@ namespace ScrapperService.Controllers
     [Route("[controller]")]
     public class ScrapperController : ControllerBase
     {
-        private readonly IScrapperService _UNSDScrapper;
-        public ScrapperController(IScrapperService UNSDScrapper)
+        private readonly Scrapper _Scrapper;
+        public ScrapperController(IScrapperService UNSDScrapper, ILLMServiceConnector lLMService)
         {
-            _UNSDScrapper = UNSDScrapper;
-
+            _Scrapper = new Scrapper(lLMService, UNSDScrapper);
         }
         [HttpGet("BaseMap")]
         public IActionResult Get()
@@ -19,6 +20,22 @@ namespace ScrapperService.Controllers
             try
             {
                 return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpGet("CustomMap")]
+        public async Task<IActionResult> GetNewMap([FromQuery] string keyword, [FromQuery] string description)
+        {
+
+            var result = await _Scrapper.Scrape(keyword, description);
+
+            try
+            {
+                return Ok(result);
             }
             catch (Exception)
             {

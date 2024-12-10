@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using ScrapperService.Connectors;
+using ScrapperService.Helpers;
 using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
@@ -16,8 +17,9 @@ namespace ScrapperService.Services.UNSDScrapper
             _LLMConnector = LLMConnector;
             _UNSDScrapper = uNSDScrapper;
         }
-        public async Task<string> Scrape(string url, string query)
+        public async Task<string> Scrape(string keyword, string query)
         {
+            var url = UrlCreator.CreateUNSDUrl(keyword);
             //Get all the titles of the data from the page. return list of titles
             var http = new HttpClient();
             var titles = await _UNSDScrapper.GetDatasetsTitles(url, http);
@@ -60,7 +62,7 @@ namespace ScrapperService.Services.UNSDScrapper
             List<string> allRecordsDescription = GetAllRecordDescriptions(processedData, DatasetDescriptionKey);
 
             //Ask LLMService which description aligns best with the query
-            var mostRelevantDescription = await _LLMConnector.GetPrediction(string.Join(",", allRecordsDescription), $"Which one of provided descriptions matches best to this query: {query}. Return only the number that corresponst to the most relevant query. Don't return anything else");
+            var mostRelevantDescription = await _LLMConnector.GetPrediction(string.Join(",", allRecordsDescription), $"Which one of provided descriptions matches best to this query: {query}. Return only the number that corresponst to the most relevant query. Don't return anything else. Always return some number");
             var mostRelevantDescriptionIndex = int.Parse(mostRelevantDescription) -1;
 
             //From proccessed data remove all records that do not contain the most relevant description

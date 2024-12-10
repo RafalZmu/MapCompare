@@ -16,9 +16,9 @@ export async function GetBaseMap(): Promise<string>{
   return '';
 }
 
-export async function GetMap(mapName: string): Promise<string>{
+export async function GetValues(url: string,query: string): Promise<string>{
   try {
-    const response = await fetch('https://localhost:7210/Map/' + mapName);
+    const response = await fetch('https://localhost:7210/Scrapper/' + url + '?' + query);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
