@@ -68,18 +68,14 @@ namespace ScrapperService.Services.UNSDScrapper
             //From proccessed data remove all records that do not contain the most relevant description
             processedData = processedData.Where(dict => dict.ContainsKey(DatasetDescriptionKey) && dict[DatasetDescriptionKey] == allRecordsDescription[mostRelevantDescriptionIndex]).ToList();
 
+            processedData = UNSDScrapperService.RemoveInvalidRecords(processedData, DatasetValuesKey);
+
             //Change proccessedData to JSON
             var processedDataJson = JsonSerializer.Serialize(processedData, new JsonSerializerOptions { WriteIndented = true});
 
             return processedDataJson;
         }
 
-        public static List<string> GetAllRecordDescriptions(List<Dictionary<string, string>> processedData, string datasetDescriptionKey)
-        {
-            ArgumentNullException.ThrowIfNull(datasetDescriptionKey);
-            return processedData.Where(dict => dict.ContainsKey(datasetDescriptionKey)).Select(dict => dict[datasetDescriptionKey]).Distinct().ToList();
-
-        }
 
         public static List<Dictionary<string, string>> RemoveUnwantedKeys(List<Dictionary<string, string>> data, string mostRelevantKeys)
         {
@@ -94,6 +90,12 @@ namespace ScrapperService.Services.UNSDScrapper
                 }
             }
             return data;
+        }
+        public static List<string> GetAllRecordDescriptions(List<Dictionary<string, string>> processedData, string datasetDescriptionKey)
+        {
+            ArgumentNullException.ThrowIfNull(datasetDescriptionKey);
+            return processedData.Where(dict => dict.ContainsKey(datasetDescriptionKey)).Select(dict => dict[datasetDescriptionKey]).Distinct().ToList();
+
         }
     }
 }

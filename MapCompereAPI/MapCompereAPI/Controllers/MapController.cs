@@ -8,25 +8,12 @@ namespace MapCompereAPI.Controllers
 	public class MapController : ControllerBase
 	{
 		private readonly string _mapFilePath = "./Assets/WorldMap.svg";
-		private readonly IMapService _mapService;
 		private readonly IScrapperConnector _scrapperConnector;
 
-		public MapController(IMapService mapService, IScrapperConnector scrapperConnector)
+		public MapController(IScrapperConnector scrapperConnector)
 		{
-			_mapService = mapService;
 			_scrapperConnector = scrapperConnector;
 
-		}
-
-		[HttpGet("BaseMap")]
-		public async Task<IActionResult> GetBaseMap()
-		{
-			var map = await _mapService.GetBaseMap();
-			if (map == null)
-			{
-				return NotFound();
-			}
-			return Ok(map);
 		}
 
 		[HttpGet("GetMap")]
@@ -35,7 +22,7 @@ namespace MapCompereAPI.Controllers
 			var data = await _scrapperConnector.ScrapData(keyword, description);
 
 
-			return Ok();	
+			return Ok(data);	
 		}
 
 
@@ -50,12 +37,5 @@ namespace MapCompereAPI.Controllers
 			// Loop through the list of countries and update the SVG content
 			return Ok();
 		}
-
-		[HttpDelete]
-		public async Task<IActionResult> DeleteMap(string mapName)
-		{
-            _mapService.DeleteMap(mapName);
-            return Ok();
-        }
 	}
 }

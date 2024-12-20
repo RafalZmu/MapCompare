@@ -13,8 +13,14 @@ namespace ScrapperService.Services.UNSDScrapper
 {
     public class UNSDScrapperService : IScrapperService
     {
+        private string _folderPath;
         public UNSDScrapperService()
         {
+            _folderPath = "D:\\Projekty\\Praca_inz";
+            if (!Directory.Exists(_folderPath))
+            {
+                _folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+ "\\";
+            }
         }
         public async Task<List<string>> GetDatasetsTitles(string url, HttpClient http)
         {
@@ -66,12 +72,11 @@ namespace ScrapperService.Services.UNSDScrapper
 
             var download = await downloadTask;
 
-            var downloadPath = "D:\\Projekty\\Praca_inz";
-            var filePath = "D:\\Projekty\\Praca_inz\\" + dataIndexToDownload + ".zip";
+            var filePath = _folderPath + dataIndexToDownload + ".zip";
 
             await download.SaveAsAsync(filePath);
 
-            Unzip(filePath, downloadPath, dataIndexToDownload);
+            Unzip(filePath, _folderPath, dataIndexToDownload);
 
             return "Downloaded successfully";
         }
@@ -90,7 +95,7 @@ namespace ScrapperService.Services.UNSDScrapper
 
         public List<Dictionary<string, string>> ProcessData(int FileIndex)
         {
-            var xmlFilePath = "D:\\Projekty\\Praca_inz\\" + FileIndex + ".xml";
+            var xmlFilePath = _folderPath + FileIndex + ".xml";
             XDocument xDocument = XDocument.Load(xmlFilePath);
             var records = new List<Dictionary<string, string>>();
 
@@ -107,13 +112,13 @@ namespace ScrapperService.Services.UNSDScrapper
                 }
                 records.Add(record);
             }
-            records = GetMostRecentData(records);
+          //  records = GetMostRecentData(records);
 
 
             return records;
         }
 
-        private List<Dictionary<string, string>> GetMostRecentData(List<Dictionary<string, string>> records)
+        private static List<Dictionary<string, string>> GetMostRecentData(List<Dictionary<string, string>> records)
         {
             string mostRecentYear = "";
             records = GetMostRecentPeriod(records);
@@ -146,5 +151,36 @@ namespace ScrapperService.Services.UNSDScrapper
             }
             return 0;
         }
+        public static List<Dictionary<string, string>> RemoveInvalidRecords(List<Dictionary<string, string>> processedData, string valueKey)
+        {
+            List<double> values= new();
+            List<Dictionary<string, string>> listOfRemovedRecords = new List<Dictionary<string, string>>();
+
+            foreach (var kvp in processedData)
+            {
+                values.Add(double.Parse(kvp[valueKey], System.Globalization.CultureInfo.InvariantCulture));
+            }
+            var average = values.Average();
+            var deviation = StandardDeviation(values);
+
+            foreach (var kvp in processedData)
+            {
+                double.TryParse(kvp[valueKey], System.Globalization.CultureInfo.InvariantCulture, out double value);
+                if (Math.Abs(value - average) <= deviation)
+                {
+                    listOfRemovedRecords.Add(kvp);
+                }
+            }
+            listOfRemovedRecords = GetMostRecentData(listOfRemovedRecords);
+            return listOfRemovedRecords;
+
+        }
+        public static double StandardDeviation(IEnumerable<double> values)
+        {
+            double mean = values.Average();
+            double sumOfSquares = values.Select(v => Math.Pow(v - mean, 2)).Sum();
+            return Math.Sqrt(sumOfSquares / values.Count());
+        }
+
     }
 }

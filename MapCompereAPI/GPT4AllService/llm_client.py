@@ -1,4 +1,3 @@
-from gpt4all import GPT4All
 import pandas as pd
 
 class LLMClient:

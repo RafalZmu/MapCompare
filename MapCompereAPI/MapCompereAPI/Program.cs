@@ -20,7 +20,7 @@ namespace MapCompereAPI
 			builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 			builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
-			builder.Services.AddSingleton<IMapService, MapService>();
+			//builder.Services.AddSingleton<IMapService, MapService>();
 			builder.Services.AddScoped<IScrapperConnector, ScrapperConnector>();
 
 			// Configure NLog

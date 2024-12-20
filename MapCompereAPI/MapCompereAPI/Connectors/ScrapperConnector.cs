@@ -11,9 +11,10 @@
 
         public async Task<string> ScrapData(string keyword, string description)
         {
-            var response = await _client.GetAsync("https://localhost:7106/Scrapper/CustomMap?keyword=" + keyword + "&description=" + description);
+            var response = await _client.GetAsync("https://localhost:7106/Scrapper/CustomMap?keyword=" + keyword.Replace(" ", "_") +
+                                                  "&description=" + description.Replace(" ","_"));
             var content = await response.Content.ReadAsStringAsync();
-            throw new NotImplementedException();
+            return content;
         }
     }
 }

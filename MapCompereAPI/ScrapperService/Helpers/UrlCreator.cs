@@ -4,7 +4,7 @@
     {
         public static string CreateUNSDUrl(string keyword)
         {
-            string url = "https://data.un.org/Search.aspx?q=" + keyword;
+            string url = "https://data.un.org/Search.aspx?q=" + keyword.Replace(" ", "+");
             return url;
         }
     }

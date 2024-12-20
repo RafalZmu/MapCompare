@@ -30,8 +30,7 @@ namespace ScrapperService.Controllers
         [HttpGet("CustomMap")]
         public async Task<IActionResult> GetNewMap([FromQuery] string keyword, [FromQuery] string description)
         {
-
-            var result = await _Scrapper.Scrape(keyword, description);
+            var result = await _Scrapper.Scrape(keyword.Replace("_", " "), description.Replace("_", " "));
 
             try
             {
