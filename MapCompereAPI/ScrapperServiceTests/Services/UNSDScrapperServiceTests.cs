@@ -1,4 +1,5 @@
-﻿using Microsoft.Playwright;
+﻿using MapCompereAPI.Services;
+using Microsoft.Playwright;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ScrapperService.Connectors;
 using ScrapperService.Services.UNSDScrapper;
@@ -180,6 +181,21 @@ namespace ScrapperService.Services.Tests
             //Assert
             Assert.IsNotNull(result);
 
+        }
+        [TestMethod]
+        public async Task ExtractCountrySynonymsFromJson()
+        {
+            //Arrange
+            var dataProcessingService = new DataProcessingService();
+
+            //Act
+            (var correctCountries, var synonyms) = dataProcessingService.GetDataFromJSON();
+
+
+            //Assert
+            Assert.IsNotNull(correctCountries);
+            Assert.IsNotNull(synonyms);
+            Assert.IsTrue(correctCountries.ContainsKey(synonyms["pl"]));
         }
     }
 }

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MapCompereAPI\MapCompereAPI.csproj" />
     <ProjectReference Include="..\ScrapperService\ScrapperService.csproj" />
   </ItemGroup>
 
