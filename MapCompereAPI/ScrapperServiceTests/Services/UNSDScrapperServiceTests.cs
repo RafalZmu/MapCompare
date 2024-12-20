@@ -172,7 +172,7 @@ namespace ScrapperService.Services.Tests
         {
             //Arrange
             Scrapper scrapper = new(new LLMServiceConnector(), new UNSDScrapperService());
-            string Uri = "https://data.un.org/Search.aspx?q=Temperature";
+            string Uri = "Temperature";
             string query = "Annual average temperature";
 
             //Act
@@ -189,13 +189,29 @@ namespace ScrapperService.Services.Tests
             var dataProcessingService = new DataProcessingService();
 
             //Act
-            (var correctCountries, var synonyms) = dataProcessingService.GetDataFromJSON();
+            var synonyms = dataProcessingService.synonyms;
+            var correctCountries = dataProcessingService.correctCountryNames;
 
 
             //Assert
             Assert.IsNotNull(correctCountries);
             Assert.IsNotNull(synonyms);
             Assert.IsTrue(correctCountries.ContainsKey(synonyms["pl"]));
+        }
+
+        [TestMethod]
+        public async Task FixCountryNamesTest()
+        {
+            //Arrange
+            var jsonFile = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Assets\JsonScrapperResponse.json");
+            var dataProcessingService = new DataProcessingService();
+
+            //Act
+            List<CountryDTO> classList = dataProcessingService.JsonToCountryDto(jsonFile);
+
+            //Assert
+            Assert.IsNotNull(classList);
+
         }
     }
 }

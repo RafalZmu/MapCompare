@@ -1,0 +1,536 @@
+[
+  {
+    "Country or Territory": "AFGHANISTAN, ISLAMIC STATE OF",
+    "Period": "1964-1983",
+    "Statistic Description": "Mean Value",
+    "Annual": "13.7"
+  },
+  {
+    "Country or Territory": "ALBANIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "16.4"
+  },
+  {
+    "Country or Territory": "ALGERIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "17.6"
+  },
+  {
+    "Country or Territory": "ARGENTINA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "17.8"
+  },
+  {
+    "Country or Territory": "ARGENTINA (ANTARCTIC STATIONS)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-5.8"
+  },
+  {
+    "Country or Territory": "AZERBAIJAN",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "13.3"
+  },
+  {
+    "Country or Territory": "BELARUS",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "5.1"
+  },
+  {
+    "Country or Territory": "BELGIUM",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "9.8"
+  },
+  {
+    "Country or Territory": "BENIN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.7"
+  },
+  {
+    "Country or Territory": "BOSNIA AND HERZEGOVINA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "9.6"
+  },
+  {
+    "Country or Territory": "BRAZIL",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "24.7"
+  },
+  {
+    "Country or Territory": "BULGARIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "11.6"
+  },
+  {
+    "Country or Territory": "CANADA",
+    "Period": "1941-1992",
+    "Statistic Description": "Mean Value",
+    "Annual": "2.4"
+  },
+  {
+    "Country or Territory": "CAPE VERDE",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "23.5"
+  },
+  {
+    "Country or Territory": "CHILE",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "20.5"
+  },
+  {
+    "Country or Territory": "CHILE (ANTARCTIC STATIONS)",
+    "Period": "1969-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-2.3"
+  },
+  {
+    "Country or Territory": "CHINA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-1.6"
+  },
+  {
+    "Country or Territory": "COLOMBIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "28.0"
+  },
+  {
+    "Country or Territory": "COLOMBIA (SAN ANDRES AND PROVIDENCIA ISLANDS)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.3"
+  },
+  {
+    "Country or Territory": "COSTA RICA",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.1"
+  },
+  {
+    "Country or Territory": "CROATIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "11.3"
+  },
+  {
+    "Country or Territory": "CZECH REPUBLIC",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.2"
+  },
+  {
+    "Country or Territory": "DJIBOUTI",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "29.9"
+  },
+  {
+    "Country or Territory": "DOMINICA",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.2"
+  },
+  {
+    "Country or Territory": "DOMINICAN REPUBLIC",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "18.4"
+  },
+  {
+    "Country or Territory": "EL SALVADOR",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.8"
+  },
+  {
+    "Country or Territory": "ESTONIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "5.1"
+  },
+  {
+    "Country or Territory": "FIJI",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "25.5"
+  },
+  {
+    "Country or Territory": "FINLAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-1.0"
+  },
+  {
+    "Country or Territory": "FRANCE (CARIBBEAN ISLANDS, GUADELOUPE, MARTINIQUE)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.3"
+  },
+  {
+    "Country or Territory": "FRANCE (ISLANDS IN THE INDIAN OCEAN)",
+    "Period": "1950-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "13.8"
+  },
+  {
+    "Country or Territory": "GABON",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "25.9"
+  },
+  {
+    "Country or Territory": "GREECE",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "15.6"
+  },
+  {
+    "Country or Territory": "GUINEA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "21.7"
+  },
+  {
+    "Country or Territory": "HONG KONG",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "23.2"
+  },
+  {
+    "Country or Territory": "ICELAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "3.5"
+  },
+  {
+    "Country or Territory": "INDIA",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "25.1"
+  },
+  {
+    "Country or Territory": "IRAN, ISLAMIC REPUBLIC OF",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "11.9"
+  },
+  {
+    "Country or Territory": "IRELAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "10.6"
+  },
+  {
+    "Country or Territory": "JAPAN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "15.6"
+  },
+  {
+    "Country or Territory": "JAPAN (ANTARCTIC STATIONS)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-10.4"
+  },
+  {
+    "Country or Territory": "JORDAN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "23.6"
+  },
+  {
+    "Country or Territory": "KAZAKSTAN (EUROPE)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "6.8"
+  },
+  {
+    "Country or Territory": "KENYA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "29.3"
+  },
+  {
+    "Country or Territory": "LATVIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "4.6"
+  },
+  {
+    "Country or Territory": "LEBANON",
+    "Period": "1981-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "19.9"
+  },
+  {
+    "Country or Territory": "LITHUANIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.0"
+  },
+  {
+    "Country or Territory": "MADAGASCAR",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-999.9"
+  },
+  {
+    "Country or Territory": "MALI",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "28.9"
+  },
+  {
+    "Country or Territory": "MALTA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "18.6"
+  },
+  {
+    "Country or Territory": "MAURITIUS",
+    "Period": "1950-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "13.8"
+  },
+  {
+    "Country or Territory": "MEXICO",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "24.4"
+  },
+  {
+    "Country or Territory": "MOLDOVA, REPUBLIC OF",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "9.6"
+  },
+  {
+    "Country or Territory": "NETHERLANDS",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "9.4"
+  },
+  {
+    "Country or Territory": "NETHERLANDS ANTILLES AND ARUBA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.8"
+  },
+  {
+    "Country or Territory": "NEW CALEDONIA",
+    "Period": "1966-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "22.9"
+  },
+  {
+    "Country or Territory": "NEW ZEALAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "11.7"
+  },
+  {
+    "Country or Territory": "NICARAGUA",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "23.5"
+  },
+  {
+    "Country or Territory": "NIGER",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.8"
+  },
+  {
+    "Country or Territory": "NORWAY",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "-1.4"
+  },
+  {
+    "Country or Territory": "OMAN",
+    "Period": "1980-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "28.4"
+  },
+  {
+    "Country or Territory": "PAKISTAN",
+    "Period": "1971-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "15.9"
+  },
+  {
+    "Country or Territory": "PARAGUAY",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "24.5"
+  },
+  {
+    "Country or Territory": "PHILIPPINES",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "25.9"
+  },
+  {
+    "Country or Territory": "POLAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.6"
+  },
+  {
+    "Country or Territory": "PORTUGAL",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "17.3"
+  },
+  {
+    "Country or Territory": "PORTUGAL (MADEIRA)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "18.7"
+  },
+  {
+    "Country or Territory": "QATAR",
+    "Period": "1962-1992",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.7"
+  },
+  {
+    "Country or Territory": "ROMANIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.9"
+  },
+  {
+    "Country or Territory": "SINGAPORE",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.7"
+  },
+  {
+    "Country or Territory": "SUDAN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.7"
+  },
+  {
+    "Country or Territory": "SWEDEN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.8"
+  },
+  {
+    "Country or Territory": "SWITZERLAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "8.5"
+  },
+  {
+    "Country or Territory": "SYRIAN ARAB REPUBLIC",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "18.8"
+  },
+  {
+    "Country or Territory": "THAILAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "26.7"
+  },
+  {
+    "Country or Territory": "THE FORMER YUGOSLAV REPUBLIC OF MACEDONIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "6.8"
+  },
+  {
+    "Country or Territory": "TOGO",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "28.1"
+  },
+  {
+    "Country or Territory": "TUNISIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "18.4"
+  },
+  {
+    "Country or Territory": "UKRAINE",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "7.2"
+  },
+  {
+    "Country or Territory": "UNITED ARAB EMIRATES",
+    "Period": "1977-1991",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.2"
+  },
+  {
+    "Country or Territory": "UNITED KINGDOM OF GREAT BRITAIN \u0026 NORTHERN IRELAND",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "6.9"
+  },
+  {
+    "Country or Territory": "UNITED STATES OF AMERICA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "15.1"
+  },
+  {
+    "Country or Territory": "UNITED STATES OF AMERICA (ANTARCTIC STATIONS)",
+    "Period": "1961-1988",
+    "Statistic Description": "Mean Value",
+    "Annual": "-49.3"
+  },
+  {
+    "Country or Territory": "UNITED STATES OF AMERICA (PACIFIC ISLANDS)",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "24.2"
+  },
+  {
+    "Country or Territory": "URUGUAY",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "19.0"
+  },
+  {
+    "Country or Territory": "UZBEKISTAN",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "12.0"
+  },
+  {
+    "Country or Territory": "VENEZUELA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "27.8"
+  },
+  {
+    "Country or Territory": "YUGOSLAVIA",
+    "Period": "1961-1990",
+    "Statistic Description": "Mean Value",
+    "Annual": "11.8"
+  },
+  {
+    "Country or Territory": "ZAMBIA",
+    "Period": "1966-1991",
+    "Statistic Description": "Mean Value",
+    "Annual": "21.1"
+  }
+]

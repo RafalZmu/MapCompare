@@ -61,6 +61,8 @@ namespace ScrapperService.Services.UNSDScrapper
 
             List<string> allRecordsDescription = GetAllRecordDescriptions(processedData, DatasetDescriptionKey);
 
+            allRecordsDescription = CountRecordsDescription(processedData, DatasetDescriptionKey);
+
             //Ask LLMService which description aligns best with the query
             var mostRelevantDescription = await _LLMConnector.GetPrediction(string.Join(",", allRecordsDescription), $"Which one of provided descriptions matches best to this query: {query}. Return only the number that corresponst to the most relevant query. Don't return anything else. Always return some number");
             var mostRelevantDescriptionIndex = int.Parse(mostRelevantDescription) -1;
@@ -76,6 +78,28 @@ namespace ScrapperService.Services.UNSDScrapper
             return processedDataJson;
         }
 
+        private List<string> CountRecordsDescription(List<Dictionary<string, string>> processedData, string datasetDescriptionKey)
+        {
+            List<string> viableDescriptions = new List<string>(); //Store all descriptions that have more than 20% of record
+            Dictionary<string, int> allRecordsDescriptionNumbers = new Dictionary<string, int>();
+            foreach (var record in processedData)
+            {
+                if (record.ContainsKey(datasetDescriptionKey))
+                {
+                    if (allRecordsDescriptionNumbers.ContainsKey(record[datasetDescriptionKey]))
+                    {
+                        allRecordsDescriptionNumbers[record[datasetDescriptionKey]]++;
+                    }
+                    else
+                    {
+                        allRecordsDescriptionNumbers[record[datasetDescriptionKey]] = 1;
+                    }
+                }
+            }
+            viableDescriptions = allRecordsDescriptionNumbers.Where(x => x.Value > processedData.Count * 0.2).Select(x => x.Key).ToList();
+
+            return viableDescriptions;
+        }
 
         public static List<Dictionary<string, string>> RemoveUnwantedKeys(List<Dictionary<string, string>> data, string mostRelevantKeys)
         {

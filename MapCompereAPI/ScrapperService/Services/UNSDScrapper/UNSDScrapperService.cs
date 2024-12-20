@@ -16,7 +16,7 @@ namespace ScrapperService.Services.UNSDScrapper
         private string _folderPath;
         public UNSDScrapperService()
         {
-            _folderPath = "D:\\Projekty\\Praca_inz";
+            _folderPath = "D:\\Projekty\\Praca_inz\\";
             if (!Directory.Exists(_folderPath))
             {
                 _folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+ "\\";

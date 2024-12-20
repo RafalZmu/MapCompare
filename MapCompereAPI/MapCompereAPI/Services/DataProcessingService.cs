@@ -1,40 +1,43 @@
 ﻿using MapCompereAPI.Models;
-using MongoDB.Bson.IO;
 
 namespace MapCompereAPI.Services
 {
     public class DataProcessingService
     {
-        private Dictionary<string, string> _synonyms;
-        private Dictionary<string, string> _correctCountryNames;
+        public Dictionary<string, string> synonyms;
+        public Dictionary<string, string> correctCountryNames;
         private string _countrySynonymsFilePath;
+        private readonly string _correctCountryNamesFilePath;
         public DataProcessingService() 
         {
-            _countrySynonymsFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Assets\\world.json";
-            (_correctCountryNames, _synonyms) = GetDataFromJSON();
+            _correctCountryNamesFilePath = "correctCountries";
+            _countrySynonymsFilePath =  "synonymsWithCountry";
+            synonyms = GetDataFromJSON(_countrySynonymsFilePath);
+            correctCountryNames = GetDataFromJSON(_correctCountryNamesFilePath);
 
         }
 
-        public (Dictionary<string, string> ,Dictionary<string, string>) GetDataFromJSON()
+        public List<CountryDTO> JsonToCountryDto(string JsonResponse)
         {
-            Dictionary<string, string> synonyms = new();
-            Dictionary<string, string> correctCountries = new();
+            List<CountryDTO> countries = new();
+            List<Dictionary<string, string>> scraperData = Newtonsoft.Json.JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(JsonResponse);
+            List<string> keys = scraperData[0].Keys.ToList();
+            List<string> values = scraperData[1].Values.ToList();
+            string countryKey = keys[0];
+            string yearKey = keys[1];
+            string descriptionKey = keys[2];
+            string queryValueKey = keys[3];
 
-            var jsonFile = File.ReadAllText(_countrySynonymsFilePath);
-            var deserializedJson = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CountrySynonyms>>(jsonFile);
+            throw new NotImplementedException();
 
-            foreach (var country in deserializedJson)
-            {
-                synonyms[country.alpha2] = country.id;
-                synonyms[country.alpha3] = country.id;
-                correctCountries[country.id] = country.name;
-            }
-
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(correctCountries);
-            var savepath = AppDomain.CurrentDomain.BaseDirectory + @"Assets\synonyms.json";
-            File.WriteAllText(savepath, json);
-
-            return (correctCountries, synonyms);
+        }
+        public Dictionary<string, string> GetDataFromJSON(string fileName)
+        {
+            Dictionary<string, string> data = new();
+            string dataPath = AppDomain.CurrentDomain.BaseDirectory + $"\\Assets\\{fileName}.json";
+            var dataJson = File.ReadAllText(dataPath);
+            var dataDict = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, string>>(dataJson);
+            return dataDict;
         }
     }
 }
