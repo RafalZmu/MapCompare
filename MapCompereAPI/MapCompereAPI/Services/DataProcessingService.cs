@@ -28,9 +28,49 @@ namespace MapCompereAPI.Services
             string descriptionKey = keys[2];
             string queryValueKey = keys[3];
 
-            throw new NotImplementedException();
+            foreach (var country in scraperData)
+            {
+                countries.Add(new CountryDTO()
+                {
+                    Country = country[countryKey],
+                    Year = country[yearKey],
+                    Description = country[descriptionKey],
+                    ValueKey = queryValueKey,
+                    Value = double.Parse(country[queryValueKey])
+                });
+            }
 
+            return countries;
         }
+
+
+        public List<CountryDTO> FixCountiesNames(List<CountryDTO> countries)
+        {
+            var correctedCountries = new List<CountryDTO>();
+            foreach (var country in countries)
+            {
+                country.Country = country.Country.Trim().ToLower();
+                if (country.Country.Contains("("))
+                {
+                    country.Country = country.Country.Substring(0, country.Country.IndexOf("(")).Trim();
+                }    
+                if (synonyms.ContainsKey(country.Country))
+                {
+                    country.Country = synonyms[country.Country];
+                    correctedCountries.Add(country);
+                    continue;
+                }
+                else if (correctCountryNames.ContainsValue(country.Country))
+                {
+                    country.Country = correctCountryNames[country.Country];
+                    correctedCountries.Add(country);
+                    continue;
+                }
+            }
+            return countries;
+        }
+
+
         public Dictionary<string, string> GetDataFromJSON(string fileName)
         {
             Dictionary<string, string> data = new();

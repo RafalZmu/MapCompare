@@ -200,7 +200,7 @@ namespace ScrapperService.Services.Tests
         }
 
         [TestMethod]
-        public async Task FixCountryNamesTest()
+        public async Task JsonToCountryDto_ValidJson_ReturnsCountryList()
         {
             //Arrange
             var jsonFile = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Assets\JsonScrapperResponse.json");
@@ -212,6 +212,20 @@ namespace ScrapperService.Services.Tests
             //Assert
             Assert.IsNotNull(classList);
 
+        }
+
+        [TestMethod]
+        public async Task CountuntryNameValidatorTest()
+        {
+            //Arrange
+            var dataProcessingService = new DataProcessingService();
+            var jsonFile = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Assets\JsonScrapperResponse.json");
+            List<CountryDTO> classList = dataProcessingService.JsonToCountryDto(jsonFile);
+            //Act
+            var result = dataProcessingService.FixCountiesNames(classList);
+            //Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Count > 0);
         }
     }
 }
