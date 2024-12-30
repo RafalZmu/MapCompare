@@ -96,7 +96,7 @@ namespace ScrapperService.Services.UNSDScrapper
                     }
                 }
             }
-            viableDescriptions = allRecordsDescriptionNumbers.Where(x => x.Value > processedData.Count * 0.2).Select(x => x.Key).ToList();
+            viableDescriptions = allRecordsDescriptionNumbers.Where(x => x.Value > processedData.Count * 0.05).Select(x => x.Key).ToList();
 
             return viableDescriptions;
         }

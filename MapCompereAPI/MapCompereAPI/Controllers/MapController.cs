@@ -1,5 +1,7 @@
 ﻿using MapCompereAPI.Connectors;
+using MapCompereAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 
 namespace MapCompereAPI.Controllers
 {
@@ -20,9 +22,12 @@ namespace MapCompereAPI.Controllers
 		public async Task<IActionResult> GetMap([FromQuery] string keyword, [FromQuery] string description)
 		{
 			var data = await _scrapperConnector.ScrapData(keyword, description);
+			var dataProcessingService = new DataProcessingService();
+			var procesedData = dataProcessingService.CorrectCountryNames(dataProcessingService.JsonToCountryDto(data));
+			data = JsonSerializer.Serialize(procesedData, new JsonSerializerOptions { WriteIndented = true});
 
 
-			return Ok(data);	
+            return Ok(data);	
 		}
 
 

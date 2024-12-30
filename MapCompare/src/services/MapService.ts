@@ -17,15 +17,10 @@ export async function GetBaseMap(): Promise<string>{
 }
 
 export async function GetValues(url: string,query: string): Promise<string>{
-  try {
-    const response = await fetch('https://localhost:7210/Scrapper/' + url + '?' + query);
+    const response = await fetch('https://localhost:7210/Map/GetMap?keyword='+url+'&description='+ query.replace(' ', '_'));
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
     const data = await response.text();
     return data;
-  } catch (error) {
-    console.error('There was a problem with the fetch operation:', error);
-  }
-  return '';
 }

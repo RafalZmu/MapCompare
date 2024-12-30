@@ -18,8 +18,18 @@ namespace MapCompereAPI
 			builder.Services.AddEndpointsApiExplorer();
 			builder.Services.AddSwaggerGen();
 			builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+			builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                    });
+            });
 
-			builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
+            builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
 			//builder.Services.AddSingleton<IMapService, MapService>();
 			builder.Services.AddScoped<IScrapperConnector, ScrapperConnector>();
 
@@ -35,8 +45,9 @@ namespace MapCompereAPI
 				app.UseSwagger();
 				app.UseSwaggerUI();
 			}
+			app.UseCors("AllowAll");
 
-			app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
 
 			app.UseAuthorization();
 

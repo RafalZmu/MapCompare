@@ -44,7 +44,7 @@ namespace MapCompereAPI.Services
         }
 
 
-        public List<CountryDTO> FixCountiesNames(List<CountryDTO> countries)
+        public List<CountryDTO> CorrectCountryNames(List<CountryDTO> countries)
         {
             var correctedCountries = new List<CountryDTO>();
             foreach (var country in countries)

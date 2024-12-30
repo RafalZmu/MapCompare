@@ -222,7 +222,7 @@ namespace ScrapperService.Services.Tests
             var jsonFile = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Assets\JsonScrapperResponse.json");
             List<CountryDTO> classList = dataProcessingService.JsonToCountryDto(jsonFile);
             //Act
-            var result = dataProcessingService.FixCountiesNames(classList);
+            var result = dataProcessingService.CorrectCountryNames(classList);
             //Assert
             Assert.IsNotNull(result);
             Assert.IsTrue(result.Count > 0);

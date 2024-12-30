@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ScrapperService\\ScrapperService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "MapCompereAPI\\MapCompereAPI.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
