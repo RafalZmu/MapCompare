@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ScrapperService.Services.Tests
+namespace ScrapperService.Services
 {
     [TestClass()]
     public class UNSDScrapperServiceTests

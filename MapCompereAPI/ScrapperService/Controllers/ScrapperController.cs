@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ScrapperService.Connectors;
-using ScrapperService.Services;
 using ScrapperService.Services.UNSDScrapper;
 
 namespace ScrapperService.Controllers

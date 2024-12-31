@@ -1,4 +1,4 @@
-﻿namespace ScrapperService.Services
+﻿namespace ScrapperService.Services.UNSDScrapper
 {
     public interface IScrapperService
     {
@@ -7,6 +7,6 @@
         Task<string> DownloadData(string url, int dataIndexToDownload);
 
         List<Dictionary<string, string>> ProcessData(int FileIndex);
-        
+
     }
 }
