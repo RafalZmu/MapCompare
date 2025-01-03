@@ -1,18 +1,26 @@
 ﻿
+using ScrapperService.Connectors;
 using System.Text.Json;
 
 namespace ScrapperService.Services.WebScrapper
 {
-    public class DataProcessor
+    public class DataProcessor : IDataProcessor
     {
-        public static string ProcessMdData(string mdString)
+        private ILLMServiceConnector _iLLMServiceConnector;
+        public DataProcessor(ILLMServiceConnector iLLMServiceConnector)
+        {
+            _iLLMServiceConnector = iLLMServiceConnector;
+        }
+        public async Task<string> ProcessMdData(string mdString, string query)
         {
             var md = mdString;
             List<string> countryNamesList = GetCountriesFromJson();
-            md = CutUnncesaryDataFromMd(md, countryNamesList);
+            //md = CutUnncesaryDataFromMd(md, countryNamesList);
 
-
-
+            var response = await _iLLMServiceConnector.ExtractDataFromMd(md, query, "Extract the data from the md and format it into the json format. the json format should" +
+                " have following keys: Country or Territory and corresponding key Value. After the json response add another json with keys: Period  can be one year or period in format yyyy-yyyy, Statistic Description. Separate the two json only with 'END' string" +
+                " Focus on data with individual countries not on regions, You can provide them too but never return only regions. Instdes of key names in response input 1 for Country or Territory"+
+                " 2 for Value and. Example of one element {1:Poland,2:15}");
 
             throw new NotImplementedException();
         }
@@ -43,11 +51,11 @@ namespace ScrapperService.Services.WebScrapper
 
             if (countriesInMD.Count > 60)
             {
-                return ExtractMd(countriesInMD, ref mdString, 100);
+                return ExtractMd(countriesInMD, ref mdString, 800);
             }
             if (countryNamesList.Count > 20)
             {
-                return ExtractMd(countriesInMD, ref mdString, 500);
+                return ExtractMd(countriesInMD, ref mdString, 1000);
             }
             return mdString;
         }

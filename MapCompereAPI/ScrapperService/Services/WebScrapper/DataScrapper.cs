@@ -6,15 +6,19 @@ namespace ScrapperService.Services.WebScrapper
 {
     public class DataScrapper
     {
+        private readonly IDataProcessor _dataProcessor;
+        public DataScrapper(IDataProcessor dataProcessor)
+        {
+            _dataProcessor = dataProcessor; 
+        }
         public async Task<string> ScrapData(string keyword, string description)
         {
-
             var url = UrlCreator.CreateBraveUrl("Countries "+keyword +" data");
             var websiteLink = ScrapeWebsiteLink(url);
 
             var mdSourceWebsite = GetMdWebsite(websiteLink);
 
-            DataProcessor.ProcessMdData(mdSourceWebsite);
+            var data = await _dataProcessor.ProcessMdData(mdSourceWebsite, keyword+" "+description);
             return websiteLink;
         }
 

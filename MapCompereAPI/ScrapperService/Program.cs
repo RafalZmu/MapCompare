@@ -1,6 +1,7 @@
 
 using ScrapperService.Connectors;
 using ScrapperService.Services.UNSDScrapper;
+using ScrapperService.Services.WebScrapper;
 
 namespace ScrapperService
 {
@@ -18,6 +19,7 @@ namespace ScrapperService
             builder.Services.AddSwaggerGen();
             builder.Services.AddSingleton<IScrapperService, UNSDScrapperService>();
 			builder.Services.AddSingleton<ILLMServiceConnector, LLMServiceConnector>();
+            builder.Services.AddSingleton<IDataProcessor, DataProcessor>();
 
 
             var app = builder.Build();

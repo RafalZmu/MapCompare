@@ -11,5 +11,5 @@ class LLMClient:
 
     def generate(self, prompt):
         with self.model.chat_session(system_prompt=self.system_prompt):
-            output = self.model.generate(prompt, max_tokens=5000, temp=0, )
+            output = self.model.generate(prompt, max_tokens=10000, temp=0, )
             return output

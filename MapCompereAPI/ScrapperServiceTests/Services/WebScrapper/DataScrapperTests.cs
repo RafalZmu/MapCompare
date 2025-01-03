@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ScrapperService.Connectors;
 using ScrapperService.Services.WebScrapper;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ namespace ScrapperService.Services.WebScrapper.Tests
             // Arrange
             string keyword = "GDP";
             string description = "GDP";
-            DataScrapper scrapper = new DataScrapper();
+            var dataProcessor = new DataProcessor(new LLMServiceConnector());
+            DataScrapper scrapper = new DataScrapper(dataProcessor);
             // Act
             string result = await scrapper.ScrapData(keyword, description);
             // Assert
@@ -26,11 +28,13 @@ namespace ScrapperService.Services.WebScrapper.Tests
         }
 
         [TestMethod()]
-        public void ScrapperMdProcessingTest()
+        public async Task ScrapperMdProcessingTest()
         {
             //Arrange
+            var LLMServiceConnector = new LLMServiceConnector();
+            var dataProcessor = new DataProcessor(LLMServiceConnector);
             string mdString = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + $"\\Assets\\ScrapperMdExample.json");
-            var processedData = DataProcessor.ProcessMdData(mdString);
+            var processedData = await dataProcessor.ProcessMdData(mdString, "current gdp");
         }
     }
 }
