@@ -26,5 +26,22 @@
             }
             return responseBody;
         }
+        public async Task<string> ExtractDataFromMd(string md, string query, string instrunctions = "")
+        {
+            string responseBody = "";
+            string url = $"{_serviceUrl}/ExtractFromMd?md={Uri.EscapeDataString(md)}&query={Uri.EscapeDataString(query+" "+instrunctions)}";
+            HttpResponseMessage response = await _client.GetAsync(url);
+
+            if (response.IsSuccessStatusCode)
+            {
+                responseBody = await response.Content.ReadAsStringAsync();
+            }
+            else
+            {
+                Console.WriteLine($"Error: {response.StatusCode}");
+            }
+            return responseBody;
+
+        }
     }
 }
