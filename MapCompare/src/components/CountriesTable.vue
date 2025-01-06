@@ -1,7 +1,7 @@
 <!-- filepath: /f:/Projects/MapCompere/MapCompare/src/components/CountryTable.vue -->
 <template>
   <div>
-    <h2>Country Data</h2>
+    <h2 style="justify-self: center;">Data in table format</h2>
     <table>
       <thead>
         <tr>
@@ -55,8 +55,7 @@ th, td {
   border: 1px solid #ddd;
   padding: 8px;
 }
-
-th {
-  background-color: #f2f2f2;
+input {
+  color: #ddd;
 }
 </style>

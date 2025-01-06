@@ -16,5 +16,13 @@
             var content = await response.Content.ReadAsStringAsync();
             return content;
         }
+        public async Task<string> ScrapDataFromWeb(string keyword, string description)
+        {
+            var response = await _client.GetAsync("https://localhost:7106/Scrapper/MapFromWeb?keyword=" + keyword.Replace(" ", "_") +
+                                                  "&description=" + description.Replace(" ","_"));
+            var content = await response.Content.ReadAsStringAsync();
+            return content;
+        }
+
     }
 }

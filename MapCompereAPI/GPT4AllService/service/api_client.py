@@ -31,10 +31,13 @@ def generate_response():
     print(response.text)
     return response.text
 
-@app.route('/ExtractFromMd')
+@app.route('/ExtractFromMd', methods=['POST'])
 def ExtractFromMd():
-    md = request.args.get('md')
-    instructions = request.args.get('query')
+    data = request.get_json()
+    instructions = data.get('query')
+    md = data.get('md')
+    print("Data: ", md)
+    print("Instructions: ", instructions)
 
     if not md or not instructions:
         return 'Invalid request'

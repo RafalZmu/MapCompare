@@ -19,7 +19,7 @@ namespace ScrapperService.Services.WebScrapper.Tests
             string keyword = "GDP";
             string description = "GDP";
             var dataProcessor = new DataProcessor(new LLMServiceConnector());
-            DataScrapper scrapper = new DataScrapper(dataProcessor);
+            DataScrapper scrapper = new DataScrapper();
             // Act
             string result = await scrapper.ScrapData(keyword, description);
             // Assert
@@ -35,6 +35,25 @@ namespace ScrapperService.Services.WebScrapper.Tests
             var dataProcessor = new DataProcessor(LLMServiceConnector);
             string mdString = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + $"\\Assets\\ScrapperMdExample.json");
             var processedData = await dataProcessor.ProcessMdData(mdString, "current gdp");
+        }
+
+        [TestMethod()]
+        public async Task ScrapperE2E()
+        {
+            // Arrange
+            string keyword = "average Temperature";
+            string description = "";
+            var dataProcessor = new DataProcessor(new LLMServiceConnector());
+            DataScrapper scrapper = new DataScrapper();
+
+            // Act
+            string result = await scrapper.ScrapData(keyword, description);
+            string processedData = await dataProcessor.ProcessMdData(result, keyword + " " + description);
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsTrue(result.Length > 0);
+
         }
     }
 }

@@ -30,13 +30,18 @@ namespace MapCompereAPI.Services
 
             foreach (var country in scraperData)
             {
+                var result = double.TryParse(country[queryValueKey], out double value);
+                if (result == false)
+                {
+                    continue;
+                }
                 countries.Add(new CountryDTO()
                 {
                     Country = country[countryKey],
                     Year = country[yearKey],
                     Description = country[descriptionKey],
                     ValueKey = queryValueKey,
-                    Value = double.Parse(country[queryValueKey])
+                    Value = value
                 });
             }
 

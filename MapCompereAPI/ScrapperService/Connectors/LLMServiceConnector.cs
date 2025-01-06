@@ -1,4 +1,7 @@
-﻿namespace ScrapperService.Connectors
+﻿using Newtonsoft.Json;
+using System.Text;
+
+namespace ScrapperService.Connectors
 {
     public class LLMServiceConnector : ILLMServiceConnector
     {
@@ -29,8 +32,16 @@
         public async Task<string> ExtractDataFromMd(string md, string query, string instrunctions = "")
         {
             string responseBody = "";
-            string url = $"{_serviceUrl}/ExtractFromMd?md={Uri.EscapeDataString(md)}&query={Uri.EscapeDataString(query+" "+instrunctions)}";
-            HttpResponseMessage response = await _client.GetAsync(url);
+            var data = new
+            {
+                md = md,
+                query = query + " " + instrunctions,
+             
+            };
+            var json = JsonConvert.SerializeObject(data);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            string url = $"{_serviceUrl}/ExtractFromMd";
+            HttpResponseMessage response = await _client.PostAsync(url, content);
 
             if (response.IsSuccessStatusCode)
             {

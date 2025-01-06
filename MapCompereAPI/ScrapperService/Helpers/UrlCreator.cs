@@ -9,7 +9,7 @@
         }
         public static string CreateBraveUrl(string keyword)
         {
-            string url = "https://search.brave.com/search?q=" + keyword.Replace(" ", "+") + "+&source=web"; 
+            string url = "https://search.brave.com/search?q=" + keyword.Replace(" ", "+"); 
             return url;
         }
     }
