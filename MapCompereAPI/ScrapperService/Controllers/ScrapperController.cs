@@ -35,15 +35,7 @@ namespace ScrapperService.Controllers
         public async Task<IActionResult> GetNewMap([FromQuery] string keyword, [FromQuery] string description)
         {
             var result = await _Scrapper.Scrape(keyword.Replace("_", " "), description.Replace("_", " "));
-
-            try
-            {
-                return Ok(result);
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
+            return Ok(result);
         }
         [HttpGet("MapFromWeb")]
         public async Task<IActionResult> GetMapFromWeb([FromQuery] string keyword, [FromQuery] string description = "")

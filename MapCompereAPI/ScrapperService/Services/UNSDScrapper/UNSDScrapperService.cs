@@ -158,14 +158,14 @@ namespace ScrapperService.Services.UNSDScrapper
 
             foreach (var kvp in processedData)
             {
-                values.Add(double.Parse(kvp[valueKey], System.Globalization.CultureInfo.InvariantCulture));
+                values.Add(double.Parse(kvp[valueKey], CultureInfo.InvariantCulture));
             }
             var average = values.Average();
             var deviation = StandardDeviation(values);
 
             foreach (var kvp in processedData)
             {
-                double.TryParse(kvp[valueKey], System.Globalization.CultureInfo.InvariantCulture, out double value);
+                double.TryParse(kvp[valueKey], CultureInfo.InvariantCulture, out double value);
                 if (Math.Abs(value - average) <= deviation)
                 {
                     listOfRemovedRecords.Add(kvp);

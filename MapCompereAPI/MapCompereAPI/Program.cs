@@ -1,6 +1,5 @@
 
 using MapCompereAPI.Connectors;
-using MapCompereAPI.Repositories;
 using NLog.Web;
 
 namespace MapCompereAPI
@@ -29,7 +28,6 @@ namespace MapCompereAPI
                     });
             });
 
-            builder.Services.AddSingleton<IDocumentDatabase, DataBaseMongo>();
 			//builder.Services.AddSingleton<IMapService, MapService>();
 			builder.Services.AddScoped<IScrapperConnector, ScrapperConnector>();
 
