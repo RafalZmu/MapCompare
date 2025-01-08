@@ -163,6 +163,7 @@ namespace ScrapperService.Services
 
             //Assert
             Assert.IsNotNull(mostRelevantDescription);
+            Assert.IsTrue(int.TryParse(mostRelevantDescription, out int _));
 
 
         }
@@ -180,6 +181,7 @@ namespace ScrapperService.Services
 
             //Assert
             Assert.IsNotNull(result);
+            Assert.IsTrue(result.Length > 100);
 
         }
         [TestMethod]
@@ -211,6 +213,7 @@ namespace ScrapperService.Services
 
             //Assert
             Assert.IsNotNull(classList);
+            Assert.IsTrue(classList.Count > 20);
 
         }
 
